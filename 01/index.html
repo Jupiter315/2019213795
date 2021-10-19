@@ -1,1 +1,125 @@
-mycode
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .grid-container {
+          display: grid;
+          grid-template-columns: repeat(6, 16.6%);
+          grid-template-rows: repeat(6, 100px);
+          background-color: #b5b7b9;
+          padding: 10px;
+        }
+        .grid-item {
+          background-color: rgba(248, 179, 179, 0.8);
+          border: 1px solid rgba(189, 92, 92, 0.8);
+          padding: 20px;
+          font-size: 30px;
+          text-align: center;
+        }
+        .item1 {
+            grid-column: 1 / 7;
+            grid-row: 1;
+        }
+        .item2 {
+            grid-column: 1 / 2;
+            grid-row: 2 / 7;
+        }
+        .item3 {
+            grid-column: 2 / 7;
+            grid-row: 2 / 7;
+        }
+        h1 {
+            text-align: center;
+            vertical-align: center;
+            font-size: 36px;
+            color: rgb(230, 126, 204);
+        }
+        button {
+            color: purple;
+            background-color: pink;   
+            border-width: 0px; /* 边框宽度 */
+	        border-radius: 15px; /* 边框半径 */
+            height: 50px;
+            width: 100px;
+            font-size: 26px;
+            cursor: pointer; /* 鼠标移入按钮范围时出现手势 */
+        }
+        #img2{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-container">
+        <div class="grid-item item1">
+            <h1>欢 迎 来 到 女 孩 世 界</h1>
+        </div>
+
+        <div class="grid-item">
+            <button id="toy">玩偶</button>
+        </div>
+        <div class="grid-item">
+            <button id="jewelry">首饰</button>
+        </div>
+        <div class="grid-item">
+            <button id="skirt">裙子</button>
+        </div>
+        <div class="grid-item">
+            <button id="shoe">鞋子</button>
+        </div>
+        <div class="grid-item">
+            <button id="cosmetic">化妆品</button>
+        </div>
+
+        <div class="grid-item item3">
+            <img id="img1" src="./image/girl.jpeg" alt="女孩照片" height="450px" width="500px">
+            <img id="img2" src="" alt="">
+        </div>
+        
+    </div>
+<script type="text/javascript">
+    window.onload = function(){
+        var arrBtn = document.getElementsByTagName('button');
+        for(var i = 0;i < arrBtn.length;i++){
+            arrBtn[i].onclick = function(){
+                if(this.id == 'toy'){
+                    var img1 = document.getElementById('img1');
+                    changeImage(img1, "./image/toy1.webp", "女孩玩偶", "450px", "480px");
+                    var img2 = document.getElementById('img2');
+                    img2.style.display = "inline";
+                    changeImage(img2, "./image/toy2.webp", "女孩玩偶", "450px", "480px");
+                }else if(this.id == 'jewelry'){
+                    var img1 = document.getElementById('img1');
+                    changeImage(img1, "./image/jewelry.jpeg", "女孩首饰", "450px", "500px");
+                    var img2 = document.getElementById('img2').style.display = "none";
+                }else if(this.id == 'skirt'){
+                    var img1 = document.getElementById('img1');
+                    changeImage(img1, "./image/clothes.webp", "女孩裙子", "450px", "500px");
+                    var img2 = document.getElementById('img2').style.display = "none";
+                }else if(this.id == 'shoe'){
+                    var img1 = document.getElementById('img1');
+                    changeImage(img1, "./image/shoe1.webp", "女孩鞋子", "450px", "480px");
+                    var img2 = document.getElementById('img2');
+                    img2.style.display = "inline";
+                    changeImage(img2, "./image/shoe2.webp", "女孩鞋子", "450px", "480px");
+                }else if(this.id == 'cosmetic'){
+                    var img1 = document.getElementById('img1');
+                    changeImage(img1, "./image/cosmetics.webp", "女孩化妆品", "450px", "500px");
+                    var img2 = document.getElementById('img2').style.display = "none";
+                }
+            }
+        }
+    }
+    function changeImage(img, source, alt, h, w){
+        img.src = source;
+        img.alt = alt;
+        img.style.height = h;
+        img.style.width = w;      
+    }
+</script>
+</body>
+</html>
