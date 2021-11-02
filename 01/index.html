@@ -1,24 +1,28 @@
+<!-- 
+    开发一个个人主页，要求使用 CSS Grid Layout，包含图片，
+    目录为 01，首页文件名为 index.html
+ -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>女孩世界-木新雅的个人主页</title>
     <style>
         .grid-container {
-          display: grid;
-          grid-template-columns: repeat(6, 16.6%);
-          grid-template-rows: repeat(6, 100px);
-          background-color: #b5b7b9;
-          padding: 10px;
+            display: grid;
+            grid-template-columns: repeat(6, 16.6%);
+            grid-template-rows: repeat(6, 100px);
+            background-color: #b5b7b9;
+            padding: 10px;
         }
         .grid-item {
-          background-color: rgba(248, 179, 179, 0.8);
-          border: 1px solid rgba(189, 92, 92, 0.8);
-          padding: 20px;
-          font-size: 30px;
-          text-align: center;
+            background-color: rgba(248, 179, 179, 0.8);
+            border: 1px solid rgba(189, 92, 92, 0.8);
+            padding: 20px;
+            font-size: 30px;
+            text-align: center;
         }
         .item1 {
             grid-column: 1 / 7;
@@ -42,10 +46,10 @@
             color: purple;
             background-color: pink;   
             border-width: 0px; /* 边框宽度 */
-	        border-radius: 15px; /* 边框半径 */
+            border-radius: 15px; /* 边框半径 */
             height: 50px;
-            width: 100px;
-            font-size: 26px;
+            width: 170px;
+            font-size: 24px;
             cursor: pointer; /* 鼠标移入按钮范围时出现手势 */
         }
         #img2{
@@ -56,27 +60,27 @@
 <body>
     <div class="grid-container">
         <div class="grid-item item1">
-            <h1>欢 迎 来 到 女 孩 世 界</h1>
+            <h1>欢迎来到女孩世界-木新雅的个人主页</h1>
         </div>
 
         <div class="grid-item">
-            <button id="toy">玩偶</button>
+            <button id="aboutme">关于我</button>
         </div>
         <div class="grid-item">
-            <button id="jewelry">首饰</button>
+            <button id="hobby">我的爱好</button>
         </div>
         <div class="grid-item">
-            <button id="skirt">裙子</button>
+            <button id="hobby2">我的爱好</button>
         </div>
         <div class="grid-item">
-            <button id="shoe">鞋子</button>
+            <button id="major">我的专业</button>
         </div>
         <div class="grid-item">
-            <button id="cosmetic">化妆品</button>
+            <button id="learnmore">更多...</button>
         </div>
 
         <div class="grid-item item3">
-            <img id="img1" src="./image/girl.jpeg" alt="女孩照片" height="450px" width="500px">
+            <img id="img1" src="./image/myphoto.jpg" alt="我的照片" height="450px" width="500px">
             <img id="img2" src="" alt="">
         </div>
         
@@ -86,29 +90,27 @@
         var arrBtn = document.getElementsByTagName('button');
         for(var i = 0;i < arrBtn.length;i++){
             arrBtn[i].onclick = function(){
-                if(this.id == 'toy'){
+                if(this.id == 'aboutme'){
                     var img1 = document.getElementById('img1');
-                    changeImage(img1, "./image/toy1.webp", "女孩玩偶", "450px", "480px");
+                    changeImage(img1, "./image/myphoto.jpg", "我的照片", "450px", "480px");
                     var img2 = document.getElementById('img2');
                     img2.style.display = "inline";
-                    changeImage(img2, "./image/toy2.webp", "女孩玩偶", "450px", "480px");
-                }else if(this.id == 'jewelry'){
+                    changeImage(img2, "./image/mxy-mypic.jpg", "女孩玩偶", "450px", "480px");
+                }else if(this.id == 'hobby'){
                     var img1 = document.getElementById('img1');
-                    changeImage(img1, "./image/jewelry.jpeg", "女孩首饰", "450px", "500px");
+                    changeImage(img1, "./image/blackpink.jpeg", "BLACKPINK", "450px", "750px");
                     var img2 = document.getElementById('img2').style.display = "none";
-                }else if(this.id == 'skirt'){
+                }else if(this.id == 'hobby2'){
                     var img1 = document.getElementById('img1');
-                    changeImage(img1, "./image/clothes.webp", "女孩裙子", "450px", "500px");
+                    changeImage(img1, "./image/k-on.jpeg", "轻音少女", "450px", "750px");
                     var img2 = document.getElementById('img2').style.display = "none";
-                }else if(this.id == 'shoe'){
+                }else if(this.id == 'major'){
                     var img1 = document.getElementById('img1');
-                    changeImage(img1, "./image/shoe1.webp", "女孩鞋子", "450px", "480px");
-                    var img2 = document.getElementById('img2');
-                    img2.style.display = "inline";
-                    changeImage(img2, "./image/shoe2.webp", "女孩鞋子", "450px", "480px");
-                }else if(this.id == 'cosmetic'){
+                    changeImage(img1, "./image/computer.jpeg", "我的专业", "450px", "480px");
+                    var img2 = document.getElementById('img2').style.display = "none";
+                }else if(this.id == 'learnmore'){
                     var img1 = document.getElementById('img1');
-                    changeImage(img1, "./image/cosmetics.webp", "女孩化妆品", "450px", "500px");
+                    changeImage(img1, "./image/tobecontinued.jpeg", "敬请期待", "450px", "500px");
                     var img2 = document.getElementById('img2').style.display = "none";
                 }
             }
