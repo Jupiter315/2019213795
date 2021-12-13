@@ -1,0 +1,28 @@
+@import url(table.css);
+
+body {
+    font-family: Arial, Verdana, sans-serif;
+    color: #111111;
+}
+/* 使用flexbox */
+.flex-container{
+    display: flex;
+    Justify-content: space-around;
+    align-items: top;
+}
+.flex-container h1, .flex-container h3{
+    text-align: center;
+}
+h3{
+    position: relative;
+    left: 15%;
+}
+.introduction{
+    border: 2px dotted #111111;
+    width: 30%;
+    min-width: 200px;
+    padding: 20px;
+}
+.hidden{
+    display:none;
+}
